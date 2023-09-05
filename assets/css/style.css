@@ -12,7 +12,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   padding: 1rem 3rem;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -36,7 +36,7 @@ nav .nav-in:nth-child(1) ul a, nav .nav-in:nth-child(3) ul a {
 }
 
 section {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 section h1 {
@@ -44,10 +44,21 @@ section h1 {
   font-family: "Frank Ruhl Libre", serif;
   position: absolute;
   left: 50%;
-  top: 20%;
+  top: 30%;
   transform: translateX(-50%);
-  font-size: 6rem;
+  font-size: 7rem;
   text-align: center;
   color: #333;
   font-weight: 500;
+}
+section .subt-bx {
+  width: 20rem;
+  padding: 1rem;
+  position: absolute;
+  bottom: -4rem;
+  left: 3rem;
+}
+section .subt-bx p {
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
 }/*# sourceMappingURL=style.css.map */
