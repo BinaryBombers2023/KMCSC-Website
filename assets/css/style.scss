@@ -29,6 +29,7 @@ nav{
     font-family: $font1;
     font-weight: 700;
     font-size: $size1;
+    z-index: 100;
 
     .nav-in{
         display: flex;
@@ -52,6 +53,9 @@ nav{
 section{
     width: 100%;
     height: 100vh;
+    max-width: 100%;
+    max-height: 100vh; 
+    overflow: hidden;
     
     h1{
         width: 70%;
@@ -64,6 +68,7 @@ section{
         text-align: center;
         color: $color1;
         font-weight: 500;
+        z-index: 1;
     }
 
     .subt-bx{
@@ -72,10 +77,40 @@ section{
         position: absolute;
         bottom: -4rem;
         left: 3rem;
+        z-index: 1;
 
         p{
             font-size: $size3;
             font-family: $font1;
         }
     }
+
+    .circle{
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        
+        filter: blur(50px);
+        z-index: -1;
+        left: 50%;
+        bottom: -20%;
+        transform: translateX(-50%);
+        animation: animate 5s ease-in-out infinite;
+        transition: all 1s ease-in-out;
+    }
 }
+
+@keyframes animate{
+    0%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        background: linear-gradient(to bottom, #fa39ad 30%, #fe6c4c 60%);
+    }50%{
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+        background: linear-gradient(to bottom, #fa39ad 20%, #fe6c4c 70%);
+    }100%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        background: linear-gradient(to bottom, #fa39ad 30%, #fe6c4c 60%);
+    }
+}
+
+  
