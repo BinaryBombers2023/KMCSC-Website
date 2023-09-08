@@ -5,7 +5,6 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -47,26 +46,110 @@ nav .nav-in:nth-child(2) ul a, nav .nav-in:nth-child(3) ul a {
   align-items: center;
   justify-content: center;
 }
-.page .titles {
+
+.playvideo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  bottom: 1.5rem;
+  left: 14%;
+  padding: 2rem;
+}
+.playvideo .border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 2px #FEFEFE dotted;
+  padding: 4px;
+}
+.playvideo .border img {
+  border-radius: 50%;
+  z-index: 3;
+}
+.playvideo .border i {
+  position: absolute;
+  z-index: 4;
+  color: #fefefe;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.playvideo p {
+  font-family: "Poppins", sans-serif;
+  color: #fefefe;
+  font-size: 11px;
+}
+
+.titles {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: translateY(-3rem);
 }
-.page .titles h1 {
+.titles h1 {
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-size: 13px;
   color: #fefefe;
   margin-bottom: 1rem;
 }
-.page .titles h2 {
+.titles h2 {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
   text-align: center;
   font-weight: 500;
   color: #fefefe;
 }
-.page .titles h2 span {
+.titles h2 span {
   font-style: italic;
   font-weight: 400;
+}
+
+.page-1 {
+  width: 100%;
+  height: 130vh;
+  background-color: #176B87;
+  display: flex;
+  align-items: center;
+  padding: 7rem 0;
+  flex-direction: column;
+  gap: 1rem;
+}
+.page-1 .title_page1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-1 .title_page1 h1 {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #fefefe;
+  margin-bottom: 1rem;
+}
+.page-1 .title_page1 h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 500;
+  color: #fefefe;
+}
+.page-1 .title_page1 h2 span {
+  font-style: italic;
+  font-weight: 400;
+}
+.page-1 .img_parallax {
+  transform: translateY(8rem);
+  position: absolute;
+  height: 25rem;
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+.page-1 .img_parallax img {
+  height: 120%;
 }/*# sourceMappingURL=style.css.map */
