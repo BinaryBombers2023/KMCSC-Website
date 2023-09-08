@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,12 +9,14 @@
     overflow-x: hidden;
 }
 
-$font1 : 'Poppins', sans-serif;
-$font2 : 'Playfair Display', serif;
+$font1 : 'Poppins',
+sans-serif;
+$font2 : 'Playfair Display',
+serif;
 
 
 $color1 : #fefefe;
-$color2 : #053B50;  
+$color2 : #053B50;
 $color3 : #176B87;
 $color4 : #64CCC5;
 
@@ -22,8 +24,49 @@ $size1: 11px;
 $size2: 3rem;
 $size3: 1rem;
 $size4: 13px;
+$size5: 15px;
 
-nav{
+// custom scrollbar
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #053B50;
+    border-radius: 10px;
+}
+
+// splash screen
+.splash-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #053B50;
+    background-image: url("../img/kmcscLogo.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50% 50%;
+    transition: all 1s;
+    animation: splash-slide 5s ease-in-out;
+}
+
+@keyframes splash-slide {
+    0% {
+        transform: translateX(-1%);
+    }
+    75% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+        display: none;
+    }
+}
+
+
+nav {
     position: fixed;
     display: flex;
     align-items: center;
@@ -32,105 +75,121 @@ nav{
     padding: 2rem 11rem;
     font-family: $font1;
     font-weight: 700;
-    font-size: $size1;
+    font-size: $size5;
     z-index: 100;
 
-    .nav-in{
+    .nav-in {
         display: flex;
         align-items: center;
         justify-content: center;
-        img{
+
+        img {
             width: 7rem;
         }
     }
-    .nav-in:nth-child(2) ul,.nav-in:nth-child(3) ul{
+
+    .nav-in:nth-child(2) ul,
+    .nav-in:nth-child(3) ul {
         display: flex;
         justify-content: space-between;
         gap: 2rem;
 
-        a{
+        a {
             color: $color1;
         }
     }
+    .nav-in:nth-child(2) ul li a:hover{
+        color: #053B50;
+    }
+    .nav-in:nth-child(3) ul li a:hover{
+        color: #053B50;
+    }
 }
 
-.page{
+.parallex1{
+    background-image: url("../img/kmcscLogo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page {
     width: 100%;
     height: 100vh;
-    background-image: url(/assets/img/bg.png);
+    background-image: url("/assets/img/bg.png");
     display: flex;
     background-size: cover;
     align-items: center;
     justify-content: center;
+    background-attachment: fixed;
+}
 
+.playvideo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    bottom: 1.5rem;
+    left: 14%;
+    padding: 2rem;
 
-  
-    }
-    
-    .playvideo{
-        position: absolute;
+    .border {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        bottom: 1.5rem;
-        left: 14%;
-        padding: 2rem;
+        justify-content: center;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        border: 2px #FEFEFE dotted;
+        padding: 4px;
 
-        .border{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 4rem;
-            height: 4rem;
-            border-radius: 50%; 
-            border: 2px #FEFEFE dotted;
-            padding: 4px;
-
-            img{
-                border-radius: 50%;
-                z-index: 3;
-            }
-            i{
-                position: absolute;
-                z-index: 4;
-                color: $color1;
-                font-size: 1rem;
-                font-weight: 400;
-            }
-
+        img {
+            border-radius: 50%;
+            z-index: 3;
         }
-        
-        
-        p{
-            font-family: $font1;
+
+        i {
+            position: absolute;
+            z-index: 4;
             color: $color1;
-            font-size: $size1;
+            font-size: 1rem;
+            font-weight: 400;
         }
+
     }
 
 
+    p {
+        font-family: $font1;
+        color: $color1;
+        font-size: $size1;
+    }
+}
 
-.titles{
+
+
+.titles {
     display: flex;
     flex-direction: column;
     align-items: center;
     transform: translateY(-3rem);
-    h1{
-        
+
+    h1 {
+
         font-family: $font1;
         text-transform: uppercase;
         font-size: $size4;
         color: $color1;
         margin-bottom: 1rem;
     }
-    h2{
+
+    h2 {
         font-family: $font2;
         font-size: $size2;
         text-align: center;
         font-weight: 500;
         color: #fefefe;
 
-        span{
+        span {
             font-style: italic;
             font-weight: 400;
         }
@@ -138,7 +197,7 @@ nav{
 }
 
 
-.page-1{
+.page-1 {
     width: 100%;
     height: 130vh;
     background-color: $color3;
@@ -148,34 +207,35 @@ nav{
     flex-direction: column;
     gap: 1rem;
 
-    .title_page1{
+    .title_page1 {
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        h1{
-        
+        h1 {
+
             font-family: $font1;
             text-transform: uppercase;
             font-size: $size4;
             color: $color1;
             margin-bottom: 1rem;
         }
-        h2{
+
+        h2 {
             font-family: $font2;
             font-size: $size2;
             text-align: center;
             font-weight: 500;
             color: #fefefe;
-    
-            span{
+
+            span {
                 font-style: italic;
                 font-weight: 400;
             }
+        }
     }
-}
 
-    .img_parallax{
+    .img_parallax {
         transform: translateY(8rem) rotate(-3deg) translateX(-5rem);
         position: absolute;
         // width: 15rem;
@@ -184,12 +244,13 @@ nav{
         padding: 1rem;
         display: flex;
         align-items: center;
-        
-        img{
+
+        img {
             height: 130%;
         }
     }
-    .img_parallax:nth-child(3){
+
+    .img_parallax:nth-child(3) {
         transform: translateY(22rem) rotate(3deg) translateX(5rem);
         position: absolute;
         height: 15rem;
@@ -197,8 +258,8 @@ nav{
         padding: 1rem;
         display: flex;
         align-items: center;
-        
-        img{
+
+        img {
             height: 150%;
         }
     }

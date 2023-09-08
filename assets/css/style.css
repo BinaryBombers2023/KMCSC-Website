@@ -8,6 +8,42 @@
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #053B50;
+  border-radius: 10px;
+}
+
+.splash-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #053B50;
+  background-image: url("../img/kmcscLogo.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 50% 50%;
+  transition: all 1s;
+  animation: splash-slide 5s ease-in-out;
+}
+
+@keyframes splash-slide {
+  0% {
+    transform: translateX(-1%);
+  }
+  75% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+    display: none;
+  }
+}
 nav {
   position: fixed;
   display: flex;
@@ -17,7 +53,7 @@ nav {
   padding: 2rem 11rem;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 15px;
   z-index: 100;
 }
 nav .nav-in {
@@ -28,23 +64,38 @@ nav .nav-in {
 nav .nav-in img {
   width: 7rem;
 }
-nav .nav-in:nth-child(2) ul, nav .nav-in:nth-child(3) ul {
+nav .nav-in:nth-child(2) ul,
+nav .nav-in:nth-child(3) ul {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
 }
-nav .nav-in:nth-child(2) ul a, nav .nav-in:nth-child(3) ul a {
+nav .nav-in:nth-child(2) ul a,
+nav .nav-in:nth-child(3) ul a {
   color: #fefefe;
+}
+nav .nav-in:nth-child(2) ul li a:hover {
+  color: #053B50;
+}
+nav .nav-in:nth-child(3) ul li a:hover {
+  color: #053B50;
+}
+
+.parallex1 {
+  background-image: url("../img/kmcscLogo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .page {
   width: 100%;
   height: 100vh;
-  background-image: url(/assets/img/bg.png);
+  background-image: url("/assets/img/bg.png");
   display: flex;
   background-size: cover;
   align-items: center;
   justify-content: center;
+  background-attachment: fixed;
 }
 
 .playvideo {
